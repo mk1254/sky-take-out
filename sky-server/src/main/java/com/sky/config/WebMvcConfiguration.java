@@ -38,11 +38,11 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     }
 
     /**
-     * 通过knife4j生成接口文档
+     * 通过knife4j（集成的Swagger）生成接口文档（通过代码解析出接口文档）
      * @return
      */
     @Bean
-    public Docket docket() {
+    public Docket docket() {//Docket类，专门配置Swagger的
         ApiInfo apiInfo = new ApiInfoBuilder()
                 .title("苍穹外卖项目接口文档")
                 .version("2.0")
