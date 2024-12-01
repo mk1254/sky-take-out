@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
-@Builder
+@Builder//构造器，方便创建对象
 @NoArgsConstructor
 @AllArgsConstructor
 public class Employee implements Serializable {
