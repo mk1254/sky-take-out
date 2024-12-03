@@ -8,9 +8,5 @@ sky:
     password: 123456
 
   #阿里云oss
-  alioss:
-      endpoint: oss-cn-beijing.aliyuncs.com
-      accessKeyId: LTAI5tLUjmf3VgbDBoKBcAwc
-      accessKeySecret: 7jYJptQOOjqMA9pDrVJlXuncpPgkfr
-      bucketName: web-tilas-rlmas
+
 
