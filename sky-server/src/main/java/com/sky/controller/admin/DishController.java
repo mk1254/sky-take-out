@@ -95,5 +95,32 @@ dishService.deleteBatch(ids);
      return Result.success();
  }
 
+    /**
+     * 修改菜品的状态
+     * @param status
+     * @param id
+     * @return
+     */
+    @ApiOperation("修改菜品的状态")
+    @PostMapping("/status/{status}")
+    public Result startOrStop(@PathVariable Integer status,Long id){
+        log.info("修改菜品的状态:{}，{}",status,id);
+    dishService.startOrStop(status,id);
+        return Result.success();
+    }
+
+    /**
+     * 根据分类id查询菜品
+     *
+     * @return
+     */
+    @ApiOperation("根据分类id查询菜品")
+    @GetMapping("/list")
+    public Result<List<Dish>> getByCategoryId(Long categoryId)
+    {
+        List<Dish> l=dishService.getBycategoryId(categoryId);
+        return Result.success(l);
+    }
+
 
 }
