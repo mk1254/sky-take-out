@@ -13,6 +13,8 @@
 
     </insert>
 
+
+
     <select id="pageSelect" resultType="com.sky.vo.DishVO">
 
    select d.* ,c.name as categoryName from dish d left outer join category c on d.category_id = c.id
@@ -24,4 +26,31 @@
   order by d.create_time desc
 
     </select>
+
+    <delete id="deleteByIds">
+  delete from dish where id in
+        <foreach collection="ids" open="(" close=")" item="id" separator=",">
+            #{id}
+        </foreach>
+
+    </delete>
+
+
+    <update id="update">
+        update dish
+        <set>
+            <if test=" name != null and name !=''"> name =#{name}  , </if>
+            <if test="categoryId !=null"> category_id =#{categoryId} ,   </if>
+            <if test="price != null"> price =#{price}, </if>
+            <if test="image != null"> image =#{image} ,</if>
+            <if test="description != null"> description =#{description} ,</if>
+            <if test="status != null"> status =#{status} ,</if>
+            <if test="updateTime != null"> update_Time =#{updateTime}, </if>
+            <if test="updateUser != null"> update_User =#{updateUser}, </if>
+
+        </set>
+       where id=#{id}
+
+    </update>
+
 </mapper>
