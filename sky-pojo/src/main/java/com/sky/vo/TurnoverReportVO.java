@@ -12,6 +12,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TurnoverReportVO implements Serializable {
+    // 实现Serializable接口是Java对象序列化的方法之一，
+// 通过序列化，TurnoverReportVO类的对象可以被转换成字节流，
+// 从而可以方便地进行存储或传输。
 
     //日期，以逗号分隔，例如：2022-10-01,2022-10-02,2022-10-03
     private String dateList;
