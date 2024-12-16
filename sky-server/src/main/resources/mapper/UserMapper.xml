@@ -2,6 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
+<!--  &gt; 大于号   &lt; 小于号  （不能在动态SQL里直接写 大于号 > ,小于号 <   (会被当成标签符号而报错)  ）    -->
+
 <!--    useGeneratedKeys="true" keyProperty="id"  将主键值返回到实体类的id属性中                 -->
 <mapper namespace="com.sky.mapper.UserMapper">
 
@@ -13,7 +15,19 @@
 
     </insert>
 
+    <select id="countByMap" resultType="java.lang.Integer">
+        select count(id) from user
+        <where>
+        <if test="startTime != null">
+            and create_time &gt;  #{startTime}
+        </if>
+        <if test="endTime != null">
+            and create_time &lt; #{endTime}
+        </if>
+        </where>
 
+
+    </select>
 
 
 </mapper>

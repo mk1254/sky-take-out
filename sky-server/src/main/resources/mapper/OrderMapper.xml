@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<!--  &gt 大于号   &lt 小于号  （不能在动态SQL里直接写 大于号 > ,小于号 <   (会被当成标签符号而报错)  ）    -->
+
 <mapper namespace="com.sky.mapper.OrderMapper">
 
 
@@ -72,6 +76,7 @@
         order by order_time desc
 
     </select>
+
 
     <select id="sumByMap" resultType="java.lang.Double">
         select sum(amount) from orders
