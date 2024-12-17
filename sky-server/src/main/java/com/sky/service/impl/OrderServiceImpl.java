@@ -88,7 +88,7 @@ public class OrderServiceImpl implements OrderService {
         }
            //校验收货地址是否超出配送范围
         //TODO 还没有获取百度地图密钥 ak
-       // checkOutOfRange(addressBook.getCityName()+addressBook.getDistrictName()+addressBook.getDetail());
+        checkOutOfRange(addressBook.getCityName()+addressBook.getDistrictName()+addressBook.getDetail());
 
         //获取当前用户购物车数据
         Long userId = BaseContext.getCurrentId();
