@@ -108,7 +108,7 @@
             <artifactId>jaxb-api</artifactId>
         </dependency>
 
-        <!-- poi -->
+        <!-- POI -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
